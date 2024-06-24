@@ -8,15 +8,5 @@
   </template>
   
   <script>
-//   import { mapState } from 'vuex'
-  
-//   export default {
-//     computed: {
-//       ...mapState(['positions'])
-//     },
-//     created() {
-//       this.$store.dispatch('fetchPositions')
-//     }
-//   }
   </script>
   

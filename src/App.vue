@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div :class="{ 'nav-open': $sidebar.showSidebar }">
-    <nav>
+    <div :class="{ 'nav-open': sidebar }">
+      <nav>
       <router-link to="/">Home</router-link> 
       <router-link to="/about">About</router-link> 
       <router-link to="/dashboard">Dashboard</router-link> 
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      sidebar: true
+    }
+  }
 }
 </script>
 

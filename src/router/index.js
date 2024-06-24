@@ -3,13 +3,17 @@ import Dashboard from "../views/Dashboard.vue";
 import About from "../views/About.vue";
 import Profile from "../views/Profile.vue";
 import AuthPage from "../views/AuthPage.vue";
+import Positions from "../views/Positions.vue";
+import Complaints from "../views/Complaints.vue";
+import Requests from "../views/Requests.vue";
+import Users from "../views/Users.vue";
 import { Amplify } from 'aws-amplify';
 import { getCurrentUser } from 'aws-amplify/auth';
 import path from "path";
 
 const routes = [
   {
-    path: "/",
+    path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
     meta: { requiresAuth: true }
@@ -32,8 +36,31 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
-    path: "/"
+    path: "/positions",
+    name: "positions",
+    component: Positions,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/complaints",
+    name: "Complaints",
+    component: Complaints,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/requests",
+    name: "Requests",
+    component: Requests,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/users",
+    name: "Users",
+    component: Users,
+    meta: { requiresAuth: true }
   }
+
+
 ];
 
 const router = createRouter({
