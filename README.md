@@ -1,6 +1,11 @@
-## AWS Amplify Vue.js Starter Template
+## portal employee
 
 This repository provides a starter template for creating applications using Vue.js and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+
+## quick start
+- **initialisation**: clone the repo into ur local machine 
+- in the terminal : npm install
+then start the local dev : npm run dev
 
 ## Overview
 
@@ -12,15 +17,3 @@ This template equips you with a foundational Vue application integrated with AWS
 - **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
 - **Database**: Real-time database powered by Amazon DynamoDB.
 
-## Deploying to AWS
-
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/vue/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
-
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
