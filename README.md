@@ -4,8 +4,8 @@ This repository provides a starter template for creating applications using Vue.
 
 ## quick start
 - **initialisation**: clone the repo into ur local machine 
-- in the terminal : npm install
-then start the local dev : npm run dev
+- in the terminal : ```npm install```
+then start the local dev : ```npm run dev```
 
 ## Overview
 
