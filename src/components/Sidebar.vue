@@ -39,11 +39,11 @@
                 </span> <span class="text">Requests</span>
             </router-link>
             <router-link to="/users" class="button">
-            <span class="material-symbols-outlined">
-manage_accounts
-</span>
-<span class="text">Users</span>
-</router-link>
+                <span class="material-symbols-outlined">
+                    manage_accounts
+                </span>
+                <span class="text">Users</span>
+            </router-link>
         </div>
 
         <div class="flex"></div>
@@ -99,6 +99,7 @@ aside {
     }
 
     .menu-toggle-wrap {
+        color: white;
         display: flex;
         justify-content: flex-end;
         margin-bottom: 1rem;

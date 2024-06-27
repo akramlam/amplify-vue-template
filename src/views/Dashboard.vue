@@ -38,7 +38,7 @@ Amplify.configure(outputs);
             <div class="card-body">
               <h5 class="card-title">HR Requests</h5>
               <p class="card-text">Manage vacation, sick leaves, and other HR-related requests.</p>
-              <a href="#" class="btn btn-primary">View Requests</a>
+              <a href="#" class="btn btn-primary" @click="$router.push('/requests')">View Requests</a>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ Amplify.configure(outputs);
             <div class="card-body">
               <h5 class="card-title">Departmental Changes</h5>
               <p class="card-text">Submit or check the status of departmental change requests.</p>
-              <a href="#" class="btn btn-primary">Manage Changes</a>
+              <a href="#" class="btn btn-primary" @click="$router.push('/positions')">Manage Changes</a>
             </div>
           </div>
         </div>
@@ -59,8 +59,8 @@ Amplify.configure(outputs);
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Communications</h5>
-              <p class="card-text">Access internal messages and announcements.</p>
-              <a href="#" class="btn btn-primary">Go to Communications</a>
+              <p class="card-text">Access to your complaints and check their status or submit one.</p>
+              <a href="#" class="btn btn-primary" @click="$router.push('/complaints')">Go to Communications</a>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ Amplify.configure(outputs);
             <div class="card-body">
               <h5 class="card-title">Settings</h5>
               <p class="card-text">Adjust your profile and preferences.</p>
-              <a href="#" class="btn btn-primary">Update Settings</a>
+              <a href="#" class="btn btn-primary" @click="$router.push('/users')">Update Settings</a>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ Amplify.configure(outputs);
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Requests History</h5>
@@ -151,7 +151,7 @@ export default {
 .dashboard {
   display: flex;
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   flex-direction: column;
