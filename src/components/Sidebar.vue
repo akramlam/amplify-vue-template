@@ -8,7 +8,7 @@
 
         <div class="menu-toggle-wrap">
             <button class="menu-toggle" @click="ToggleMenu">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" style="color:white;">
                     keyboard_double_arrow_right
                 </span>
             </button>
@@ -60,7 +60,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import logoURL from '../assets/img/vue-logo.png'
+import logoURL from '../assets/img/logo.jpg'
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 

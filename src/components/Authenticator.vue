@@ -1,74 +1,73 @@
-<script setup>
-  import { Authenticator } from "@aws-amplify/ui-vue";
-  import "@aws-amplify/ui-vue/styles.css";
-
-  import { Amplify } from 'aws-amplify';
-  import outputs from '../amplify_outputs.json';
-
-  Amplify.configure(outputs);
-</script>
-
 <template>
-  <authenticator>
-        
-    <template v-slot="{ user, signOut }">
-        <h1>Hello {{user?.signInDetails?.loginId}}</h1>
-      <button @click="signOut">Sign Out</button>
-      <Users />
-    <Positions />
-    <Requests />
-    <Complaints />
-    </template>
-  </authenticator>
+  <div class="dashboard-container">
+    <!-- Sidebar Menu -->
+
+
+    <!-- Authentication Section -->
+    <div class="auth-page">
+      <authenticator>
+        <template v-slot="{ user, signOut }">
+          <div class="user-greeting">
+            <h1>Hello {{user?.signInDetails?.loginId}}</h1>
+            <button class="sign-out-btn" @click="signOut">Sign Out</button>
+          </div>
+        </template>
+      </authenticator>
+    </div>
+  </div>
 </template>
 
+<script setup>
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+import { Amplify } from 'aws-amplify';
+import outputs from '../amplify_outputs.json';
+Amplify.configure(outputs);
+</script>
+
 <style>
-  .dashboard {
-    padding: 2rem;
-  }
+.dashboard-container {
+  display: flex;
+  height: 100%;
+  background-color: #f4f6f8;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+.auth-page {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .h1 {
-      font-size: 2rem;
-    }
-  }
+.user-greeting {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 640px;
+}
 
-  .main-content {
-    .card {
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
+h1 {
+  font-size: 1.75rem;
+  color: #32325d;
+  margin-bottom: 20px;
+}
 
-      p {
-        margin-top: 1rem;
-      }
-    }
+.sign-out-btn {
+  background-color: #167bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .welcome-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .row {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .col-sm-6 {
-      flex: 1;
-    }
-
-    .card {
-      flex: 1;
-    }
-  }
+.sign-out-btn:hover {
+  background-color: #0056b3;
+}
 </style>
+

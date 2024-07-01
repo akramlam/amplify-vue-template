@@ -33,3 +33,6 @@ coverage
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+#Electron-builder output
+/dist_electron

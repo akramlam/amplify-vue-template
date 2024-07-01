@@ -1,10 +1,10 @@
 <template>
   <div class="complaint-page">
-    <div class="header">
+    <header class="page-header">
       <h1>Complaint Submission</h1>
-    </div>
+    </header>
 
-    <div class="new-complaint-form">
+    <section class="new-complaint-form">
       <h2>Submit a New Complaint</h2>
       <form @submit.prevent="submitComplaint">
         <div class="form-group">
@@ -17,9 +17,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit Complaint</button>
       </form>
-    </div>
+    </section>
 
-    <div class="complaint-history">
+    <section class="complaint-history">
       <h2>Your Complaints</h2>
       <table class="table">
         <thead>
@@ -39,7 +39,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     submitComplaint() {
-      // API call to submit the new complaint
       const newComplaint = {
         id: this.complaints.length + 1,
         title: this.newComplaint.title,
@@ -68,11 +67,8 @@ export default {
         date: new Date().toISOString().slice(0, 10)
       };
       this.complaints.push(newComplaint);
-
-      // Reset form
       this.newComplaint.title = '';
       this.newComplaint.description = '';
-
       console.log('Complaint submitted:', newComplaint);
     }
   }
@@ -80,49 +76,66 @@ export default {
 </script>
 
 <style scoped>
-.complaint-page{
+.complaint-page {
   display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
   flex-direction: column;
-
-
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 20px;
 }
-.header {
+
+.page-header {
   width: 100%;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
 }
-.header h1, .new-complaint-form h2, .complaint-history h2 {
-  margin-bottom: 20px;
+
+.new-complaint-form, .complaint-history {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-control {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .table th, .table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
 .table th {
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>

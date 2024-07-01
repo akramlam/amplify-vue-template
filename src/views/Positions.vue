@@ -1,10 +1,10 @@
 <template>
   <div class="position-change-section">
-    <div class="header">
+    <header class="page-header">
       <h1>Request Position Change</h1>
-    </div>
+    </header>
 
-    <form @submit.prevent="submitPositionChange">
+    <form @submit.prevent="submitPositionChange" class="position-form">
       <div class="form-group">
         <label for="currentPosition">Current Position</label>
         <input type="text" id="currentPosition" v-model="user.position" disabled class="form-control">
@@ -23,7 +23,7 @@
       <button type="submit" class="btn btn-primary">Submit Request</button>
     </form>
 
-    <div class="position-change-history">
+    <section class="position-change-history">
       <h2>Your Position Change Requests</h2>
       <table class="table">
         <thead>
@@ -41,7 +41,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -80,44 +80,65 @@ export default {
 </script>
 
 <style scoped>
-.position-change-section{
+.position-change-section {
   display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
   flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
-.header {
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  margin-bottom: 20px;
 
+.page-header {
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
+
+.position-form {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
 
 .form-control {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .table th, .table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
 .table th {
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>
